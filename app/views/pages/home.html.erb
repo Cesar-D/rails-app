@@ -1,2 +1,9 @@
 <h1> Hello World! </h1>
 <p> This is the home page. </p>
+<%= @num %>
+
+<% if @num > 100 %>
+  <p> The number is greater than 100. </p>
+<% else %>
+  <p> The number is less than or equal to 100. </p>
+<% end %>

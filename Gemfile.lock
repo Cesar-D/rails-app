@@ -260,7 +260,7 @@ DEPENDENCIES
   capybara
   debug
   dotenv-rails
-  hirb (~> 0.7.3)
+  hirb
   importmap-rails
   jbuilder
   pg (~> 1.1)

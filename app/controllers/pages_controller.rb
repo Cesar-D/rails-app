@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
-  def index
+  def home
+    @num = 50
   end
 end

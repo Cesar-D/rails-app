@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  delete "/articles/:id", to: "articles#destroy", as: 'article_delete'
-  patch "/articles/:id", to: "articles#update"
-  get "/articles/:id/edit", to: "articles#edit", as: 'article_edit'
-  get "/articles/:id", to: "articles#show", as: 'article'
+  delete "/article/:id", to: "articles#destroy", as: 'article_delete'
+  patch "/article/:id", to: "articles#update"
+  get "/article/:id/edit", to: "articles#edit", as: 'article_edit'
+  get "/article/:id", to: "articles#show", as: 'article'
   post "/articles", to: "articles#create"
   get "/articles", to: "articles#index"
   get "/articles/new", to: "articles#new"

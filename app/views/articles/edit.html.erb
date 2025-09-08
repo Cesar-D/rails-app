@@ -1,16 +1,2 @@
 <h1> Edit Article </h1>
-<div>
-    <%= form_with(model: @article) do |form| %>
-        <div> 
-            <%= form.label :name, "Insert Article Name" %>
-            <%= form.text_field :name %>
-        </div> 
-        <div> 
-            <%= form.label :description, "Insert Article description" %>
-            <%= form.text_field :description %>
-        </div> 
-        <div> 
-            <%= form.submit %>
-        </div> 
-    <% end %>
-</div>
+<%= render 'form' %>

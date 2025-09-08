@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  patch "/articles/:id", to: "articles#update"
+  get "/articles/:id/edit", to: "articles#edit", as: 'article_edit'
   get "/articles/:id", to: "articles#show", as: 'article'
   post "/articles", to: "articles#create"
   get "/articles", to: "articles#index"

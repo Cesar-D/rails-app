@@ -2,4 +2,8 @@
 <div>
     <h3><%= @article.name %></h3>
     <h3><%= @article.description %></h3>
+
+    <div>
+        <%= link_to "Edit", article_edit_path(@article) %>
+    </div>
 </div>

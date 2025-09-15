@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+
+  post '/signup', to: "users#create", as: 'new_user_registration'
+  get '/signup', to: "users#new", as: 'signup'
+
   delete "/article/:id", to: "articles#destroy", as: 'article_delete'
   patch "/article/:id", to: "articles#update"
   get "/article/:id/edit", to: "articles#edit", as: 'article_edit'

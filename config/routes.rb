@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   post '/login', to: "sessions#create", as: 'new_user_session'
   get '/login', to: "sessions#login", as: 'login'
 
+  get '/users/:id', to: "users#show", as: 'user'
+  get '/users', to: "users#index"
+
   post '/signup', to: "users#create", as: 'new_user_registration'
   get '/signup', to: "users#new", as: 'signup'
 

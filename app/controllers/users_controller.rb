@@ -1,6 +1,9 @@
 class UsersController < ApplicationController
     skip_before_action :authenticate_user!, only: [:new, :create]
-    before_action :set_user, only: [:show]
+    before_action :set_user, only: [:show, :edit, :update]
+
+    def edit
+    end
 
     def show
     end
@@ -22,6 +25,14 @@ class UsersController < ApplicationController
         else
             # Handle failed signup
             render :new, status: :unprocessable_entity
+        end
+    end
+
+    def update
+        if @user.update(user_params)
+            redirect_to user_path(@user), notice: "User updated successfully!"
+        else
+            render :edit, status: :unprocessable_entity
         end
     end
 

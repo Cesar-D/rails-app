@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
     skip_before_action :authenticate_user!, only: [:new, :create]
-    before_action :set_user, only: [:show, :edit, :update]
+    before_action :set_user, only: [:show, :edit, :update, :destroy]
 
     def edit
     end
@@ -34,6 +34,12 @@ class UsersController < ApplicationController
         else
             render :edit, status: :unprocessable_entity
         end
+    end
+
+    def destroy
+        session[:user_id] = nil if @user == current_user
+        @user.destroy
+        redirect_to users_path, notice: "User deleted successfully!"
     end
 
     private

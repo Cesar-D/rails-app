@@ -5,4 +5,5 @@
     <p>Created at: <%= @user.created_at %></p>
     <p>Updated at: <%= @user.updated_at %></p>
     <%= link_to 'Edit', user_edit_path(@user) %>
+    <%= button_to 'Delete User', user_delete_path(@user), method: :delete %>
 </div>

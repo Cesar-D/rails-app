@@ -10,8 +10,7 @@ Rails.application.routes.draw do
   get "/user/:id/edit", to: "users#edit", as: 'user_edit'
   get '/user/:id', to: "users#show", as: 'user'
   get '/users', to: "users#index"
-
-  post '/signup', to: "users#create", as: 'new_user_registration'
+  post '/users', to: "users#create"
   get '/signup', to: "users#new", as: 'signup'
 
   delete "/article/:id", to: "articles#destroy", as: 'article_delete'

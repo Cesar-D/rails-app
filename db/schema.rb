@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_09_21_234512) do
+ActiveRecord::Schema[7.1].define(version: 2025_09_23_032029) do
   create_schema "auth"
   create_schema "extensions"
   create_schema "graphql"
@@ -47,6 +47,12 @@ ActiveRecord::Schema[7.1].define(version: 2025_09_21_234512) do
     t.boolean "is_confirmed?", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
+    t.date "birth"
+    t.string "city"
+    t.string "country"
+    t.boolean "gender"
+    t.integer "role"
   end
 
 end

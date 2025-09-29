@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :profiles
 
   delete '/logout', to: "sessions#destroy", as: 'logout'
 

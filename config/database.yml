@@ -20,10 +20,12 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   database: apprails
   url: <%= ENV["POSTGRES_URL"] %>
+  prepared_statements: false 
 
 development:
   <<: *default
   database: app_development
+  prepared_statements: false
 
   # The specified database role being used to connect to PostgreSQL.
   # To create additional roles in PostgreSQL see `$ createuser --help`.
@@ -58,6 +60,7 @@ development:
 test:
   <<: *default
   database: app_test
+  prepared_statements: false
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is

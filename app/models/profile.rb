@@ -7,11 +7,18 @@ class Profile < ApplicationRecord
   validate :validate_gender
 
   belongs_to :user
+  enum role: [:member, :admin, :superadmin]
+  after_create :set_role
 
-  def private validate_gender
-    if self.gender != 'Male' || self.gender != 'Female'
+  private
+
+  def validate_gender
+    unless ['Male', 'Female'].include?(self.gender)
       errors.add(:gender, "was specified incorrectly")
     end
+  end
 
+  def set_role
+    self.update(role: 0)
   end
 end

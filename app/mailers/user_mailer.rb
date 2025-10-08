@@ -1,7 +1,8 @@
 class UserMailer < ApplicationMailer
 
     def confirm_account
-        @user = 'César Diaz'
-        mail(to: 'llalejoll11@gmail.com', subject: 'Welcome to my Omega blog')
+        @user = params[:user]
+        @url = "http://127.0.0.1:3000/#{@user.token}"
+        mail(to: @user.email, subject: 'Welcome to my blog')
     end
 end

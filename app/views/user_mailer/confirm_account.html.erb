@@ -5,7 +5,16 @@
     <title>Confirm Account</title>
 </head>
 <body>
-    <h1>Welcome to example.com, <%= @user %></h1>
+    <h1>Welcome to my blog </h1>
+    <div>
+        <p>
+            Hello, <%= @user.email %>!
+        </p>
+        <p>
+            You need to confirm your account. Please visit the link below to login: <%= @url %>
+        </p>
+
+    </div>
     <p> Thanks for joining and have a great day! </p>
 </body>
 </html>

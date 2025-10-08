@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
     skip_before_action :authenticate_user!, only: [:login , :create]
+    skip_before_action :user_has_profile?
 
     def login
     end

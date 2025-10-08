@@ -19,6 +19,7 @@ class UsersController < ApplicationController
     def create
         @user = User.new(user_params)
         if @user.save
+            UserMailer.with(user: @user).confirm_account.deliver_later
             # Handle successful signup
             session[:user_id] = @user.id
             redirect_to root_path, notice: "Sign up successful!"

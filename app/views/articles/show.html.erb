@@ -2,7 +2,9 @@
 <div>
     <h3><%= @article.name %></h3>
     <h3><%= @article.description %></h3>
-
+    <div>
+        <%= image_tag (@article.avatar, width: 300) %>
+    </div>
     <div>
         <%= link_to "Edit", article_edit_path(@article) %>
         <%= button_to "Delete article", article_delete_path(@article), method: :delete %>

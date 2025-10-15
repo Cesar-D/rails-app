@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_10_14_034929) do
+ActiveRecord::Schema[7.1].define(version: 2025_10_15_033819) do
   create_schema "auth"
   create_schema "extensions"
   create_schema "graphql"
@@ -27,6 +27,16 @@ ActiveRecord::Schema[7.1].define(version: 2025_10_14_034929) do
   enable_extension "plpgsql"
   enable_extension "supabase_vault"
   enable_extension "uuid-ossp"
+
+  create_table "action_text_rich_texts", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "body"
+    t.string "record_type", null: false
+    t.bigint "record_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["record_type", "record_id", "name"], name: "index_action_text_rich_texts_uniqueness", unique: true
+  end
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -66,6 +76,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_10_14_034929) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
+    t.text "body"
     t.index ["user_id"], name: "index_articles_on_user_id"
   end
 

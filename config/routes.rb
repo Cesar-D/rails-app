@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :categories
   resources :profiles
 
   get '/confirm_email/:token', to: "users#confirm_email"

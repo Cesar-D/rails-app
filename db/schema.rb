@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_10_17_034217) do
+ActiveRecord::Schema[7.1].define(version: 2025_10_17_035055) do
   create_schema "auth"
   create_schema "extensions"
   create_schema "graphql"
@@ -78,6 +78,13 @@ ActiveRecord::Schema[7.1].define(version: 2025_10_17_034217) do
     t.bigint "user_id"
     t.text "body"
     t.index ["user_id"], name: "index_articles_on_user_id"
+  end
+
+  create_table "articles_categories", id: false, force: :cascade do |t|
+    t.bigint "article_id"
+    t.bigint "category_id"
+    t.index ["article_id"], name: "index_articles_categories_on_article_id"
+    t.index ["category_id"], name: "index_articles_categories_on_category_id"
   end
 
   create_table "categories", force: :cascade do |t|

@@ -29,7 +29,11 @@
         </div>
         <div>
             <%= collection_check_boxes(:categories, :ids, Category.all, :id, :name) do |b| %>
-                <%= b.check_box %>
+                <% if @article.categories.include?(Category.find(b.object.id)) %>
+                    <%= b.check_box checked: true %>
+                <% else %>
+                    <%= b.check_box %>
+                <% end %>
                 <%= b.object.name %>
             <% end %>
         </div>

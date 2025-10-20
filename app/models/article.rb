@@ -5,4 +5,10 @@ class Article < ApplicationRecord
     has_rich_text :body
     has_and_belongs_to_many :categories
     belongs_to :user
+
+    private
+    def self.add_categories(article, ids)
+        c = Category.find(ids)
+        article.categories << c
+    end
 end

@@ -27,6 +27,13 @@
             <%= form.label :body, "Insert content" %>
             <%= form.rich_text_area :body %>
         </div>
+        <div>
+            <%= collection_check_boxes(:categories, :ids, Category.all, :id, :name) do |b| %>
+                <%= b.check_box %>
+                <%= b.object.name %>
+            <% end %>
+        </div>
+
         <div> 
             <%= form.submit %>
         </div> 

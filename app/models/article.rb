@@ -8,7 +8,11 @@ class Article < ApplicationRecord
 
     private
     def self.add_categories(article, ids)
-        c = Category.find(ids)
-        article.categories << c
+        ids.each { |id| article.categories << Category.find(id) }
+    end
+
+    def self.update_categories(article, ids)
+        article.categories.delete_all unless article.categories.empty?
+        add_categories(article, ids)
     end
 end

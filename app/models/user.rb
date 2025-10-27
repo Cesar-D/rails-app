@@ -5,6 +5,7 @@ class User < ApplicationRecord
     validates :password_confirmation, presence: true, length: { minimum: 6 }, if: :password_present?
     has_secure_password
     has_many :articles
+    has_many :comments
     has_one :profile
 
     private

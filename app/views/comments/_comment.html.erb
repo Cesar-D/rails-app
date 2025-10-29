@@ -5,4 +5,8 @@
     <%= comment.user.email %>
   </p>
 
+  <div>
+    <%= button_to 'Delete Comment', comment_path(comment), method: :delete, form: { data: { turbo_confirm: 'Are you sure?' } } %>
+  </div>
+
 </div>

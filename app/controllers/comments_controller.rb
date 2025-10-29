@@ -30,7 +30,7 @@ class CommentsController < ApplicationController
     @comment.destroy!
 
     respond_to do |format|
-      format.html { redirect_to comments_path, notice: "Comment was successfully destroyed.", status: :see_other }
+      format.html { redirect_to article_path(@comment.article_id), notice: "Comment was successfully destroyed.", status: :see_other }
     end
   end
 

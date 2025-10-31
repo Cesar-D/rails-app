@@ -46,6 +46,7 @@ gem "image_processing", "~> 1.2"
 
 gem 'dotenv-rails'
 gem 'hirb'
+gem 'tailwindcss-rails', '~> 2.0', '>= 2.0.17'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

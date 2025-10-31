@@ -1,18 +1,20 @@
-<h1>Log in</h1>
-<div>
-    <%= form_with(scope: :session, url: new_user_session_path) do |form| %>
-        <div>
-            <%= form.label :email %>
-            <%= form.email_field :email, required: true %>
-        </div>
-        
-        <div>
-            <%= form.label :password %>
-            <%= form.password_field :password, required: true %>
-        </div>
-        
-        <div>
-            <%= form.submit "Log In" %>
-        </div>
-    <% end %>
-</div>
+<section class="flex flex-col items-center justify-center m-20 px-10 border-2 border-gray-300 rounded-lg shadow-lg">
+    <h1 class="main-title">Log in</h1>
+    <div class="w-full mb-10">
+        <%= form_with(scope: :session, url: new_user_session_path, class: "flex flex-col w-full") do |form| %>
+            <div>
+                <%= form.label :email, class: "label-form" %>
+                <%= form.email_field :email, required: true, class: "field-form" %>
+            </div>
+            
+            <div>
+                <%= form.label :password, class: "label-form" %>
+                <%= form.password_field :password, required: true, class: "field-form" %>
+            </div>
+            
+            <div class="mt-10 flex justify-center items-center">
+                <%= form.submit "Log In", class: "btn-primary bg-green-500" %>
+            </div>
+        <% end %>
+    </div>
+</section>

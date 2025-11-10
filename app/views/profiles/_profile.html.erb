@@ -1,37 +1,43 @@
-<div id="<%= dom_id profile %>">
-  <p>
+<div id="<%= dom_id profile %>" class="big-card">
+  <span>
     <strong>Name:</strong>
     <%= profile.name %>
-  </p>
+  </span>
 
-  <p>
+  <span>
     <strong>City:</strong>
     <%= profile.city %>
-  </p>
+  </span>
 
-  <p>
+  <span>
     <strong>Country:</strong>
     <%= profile.country %>
-  </p>
+  </span>
 
-  <p>
+  <span>
     <strong>Birthh:</strong>
     <%= profile.birthh %>
-  </p>
+  </span>
 
-  <p>
+  <span>
     <strong>Gender:</strong>
     <%= profile.gender %>
-  </p>
+  </span>
 
-  <p>
+  <span>
     <strong>Role:</strong>
     <%= profile.role %>
-  </p>
+  </span>
 
-  <p>
+  <span>
     <strong>User:</strong>
     <%= profile.user_id %>
-  </p>
+  </span>
+
+  <% if current_user == profile.user %>
+    <div>
+      <%= link_to "Edit this profile", edit_profile_path(profile), class: "btn-primary bg-green-800" %>
+    </div>
+  <% end %>
 
 </div>

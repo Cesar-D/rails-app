@@ -17,6 +17,10 @@
   .field-form {
     @apply border border-gray-300 rounded px-3 py-2 w-full mb-5 text-sm font-semibold;
   }
+
+  .big-card {
+    @apply flex flex-col border-2 border-gray-400 rounded-lg p-10 items-center mb-10 shadow-lg gap-3;
+  }
 }
 
 

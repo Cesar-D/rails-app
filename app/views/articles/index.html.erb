@@ -1,9 +1,18 @@
-<h1>Articles</h1>
-<% @articles.each do |article| %>
-    <div>
-        <br>
-        <strong> <%= article.name %></strong> <br>
-        <%= article.description %> <br>
-        <%= link_to 'See more', article_path(article) %>
-    </div>
-<% end %>
+<section class="m-10 p-5">
+    <h1 class="main-title">Articles</h1>
+    <% @articles.each do |article| %>
+        <div class="my-5 p-5 rounded-lg border-2 border-blue-200 shadow-lg bg-white flex flex-col">
+            <div>
+                <span class="font-bold text-lg">
+                    <%= article.name %> <br>
+                </span>
+                <span class="text-sm">
+                    <%= article.description %> <br>
+                </span>
+            </div>
+            <span class="my-3">
+                <%= link_to 'See more', article_path(article), class: "btn-primary bg-blue-800" %>
+            </span>
+        </div>
+    <% end %>
+</section>
